@@ -1,0 +1,640 @@
+/* -------------------------------------------------------------------------------------------------------------------
+                                                  Header elements
+------------------------------------------------------------------------------------------------------------------- */
+.site-header {
+  position: relative;
+  .container {
+    position: relative;
+  }
+
+  p {
+    padding: 0;
+  }
+
+  .row-top {
+    @include clearfix();
+    @include  break($medium) {
+      //padding-bottom: 25px;
+    }
+    @include break($neutral) {
+    }
+    @include break($mobile) {
+      margin-top: 45px;
+      background: #f3f3f3;
+      padding: 9px 0 10px;
+    }
+  }
+  .row-mobile{
+    .site-logo{
+      display: block;
+      float: left;
+      width: 21%;
+      padding: 0;
+      margin: 10px 0 0 10px;
+    }
+    .site-logo-mobile{
+      display: block;
+      float: left;
+      margin: 10px 0 0 10px;
+      width: 156px;
+      height: auto;
+    }
+  }
+
+  .site-logo {
+    float: left;
+    padding: 15px 100px 0 0;
+    position: relative;
+    z-index: 3;
+    @include break($large) {
+    }
+    @include break($medium) {
+    }
+    @include break($neutral) {
+    }
+    @include break($mobile) {
+      display: none;
+      //margin: 0 auto;
+    }
+    a {
+      text-decoration: none;
+      @include break($medium) {
+        display: inline-block;
+      }
+    }
+    img {
+      display: block;
+    }
+  }
+
+  .widget.custom-link {
+    float: right;
+    padding-top: 25px;
+    @include break($mobile) {
+      display: none;
+    }
+    .block {
+      visibility: visible;
+      p {
+        padding: 0;
+      }
+      a {
+        font-family: $montserrat;
+        @include font(18px, 1.2, #fff);
+        letter-spacing: -0.3px;
+        text-decoration: none;
+        display: block;
+        padding: 13px 45px 13px 60px;
+        background: $color_primary;
+        border-radius: 100px;
+        position: relative;
+        strong {
+          text-transform: uppercase;
+          display: block;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: -15px;
+          left: -45px;
+          width: 94px;
+          height: 93px;
+          background: url("../images/special-image.jpg") no-repeat;
+          border-radius: 50%;
+          border: 2px solid #fff;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          top: 25px;
+          right: 17px;
+          width: 15px;
+          height: 15px;
+          background: url("../images/button-wite-arrow.svg") no-repeat 50% 50%/ contain;
+          transition: .3s;
+        }
+        &:hover {
+          background: #222;
+          &::after {
+            transform: translate(5px);
+          }
+        }
+      }
+    }
+  }
+
+  .widget.schedule-link {
+    padding: 20px 0 10px;
+    @include break($medium){
+      clear: both;
+      float: left;
+    }
+    @include break($mobile) {
+      float: none;
+      clear: none;
+      text-align: center;
+      padding: 0 0 8px;
+      @include font(14px, 1.3, #373737, 400);
+      font-family:$montserrat;
+    }
+    a {
+      display: inline-block;
+      font-family: $montserrat;
+      @include font(18px, 1);
+      border-bottom: 1px solid #d8d8d8;
+      position: relative;
+      padding-right: 40px;
+      padding-bottom: 10px;
+      text-decoration: none;
+      &::after {
+        content: '';
+        position: absolute;
+        top: -4px;
+        right: 0;
+        width: 26px;
+        height: 26px;
+        background: $brick url("../images/button-wite-arrow.svg") no-repeat 50% 50%/ 9px auto;
+        border-radius: 50%;
+
+      }
+      &:hover {
+        &::after {
+          background-color: $red-brown;
+        }
+      }
+      @include break($medium){
+        border:none;
+      }
+      @include break($neutral){
+        font-size: 16px;
+      }
+    }
+  }
+
+  .widget.contact-details {
+    padding: 0 0 15px 0;
+    @include clearfix();
+    @include break($medium){
+      padding: 0;
+      float: right;
+      width: 400px;
+      margin-top: 15px;
+    }
+    @include break($neutral){
+      width: 340px;
+    }
+    @include break($mobile) {
+      width:100%;
+      margin-top: 0;
+      padding: 0;
+      .contact-details{
+        width: 280px;
+        margin: 0 auto;
+      }
+    }
+    .phone-number {
+      font-family: $montserrat;
+      @include font(32px, 1, $color_primary, 700);
+      letter-spacing: -0.6px;
+      text-decoration: none;
+      float: left;
+      background: none;
+      padding: 0;
+      @include break($neutral){
+        font-size: 24px;
+        padding-top: 5px;
+      }
+      @include break($mobile) {
+        font-size: 24px;
+        letter-spacing:-.4px;
+        margin-top: 0;
+        padding: 0;
+        background: none;
+        text-align: left;
+        width: auto;
+        &:hover{
+          background: none;
+          color: inherit;
+        }
+      }
+    }
+    .text {
+      float: left;
+      letter-spacing: -0.2px;
+      font-size: 11px;
+      line-height: 1.3;
+      padding: 0 0 0 10px;
+      @include break($medium){
+        padding: 0 0 0 20px;
+      }
+      @include break($neutral){
+        padding: 0 0 0 10px;
+      }
+      @include break($mobile){
+        padding: 0;
+      }
+    }
+    a{
+      @include break($mobile) {
+        display: block;
+        @include font(14px, 1.3, #fff, 700);
+        text-transform: uppercase;
+        font-family: $montserrat;
+        background: #c01f1f;
+        border-radius: 2px;
+        padding: 18px 0 21px;
+        float: right;
+        margin-top: -25px;
+        text-align: center;
+        width: 99px;
+        &:hover{
+          background: #111;
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  // Fixed scrolling row on mobile.
+  .row-mobile {
+    position: fixed;
+    height: 50px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: #fff;
+    .btn-large {
+      background: $red;
+      font-size: 14px;
+      line-height: 30px;
+      border: none;
+      padding: 0 10px;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+    .icons-mobile {
+      float: right;
+      margin-top: 10px;
+      width: 32px;
+      height: 32px;
+      border: 1px solid #cecece;
+      border-radius: 50%;
+      text-align: center;
+      a {
+        color: #3a3a3a;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+/* Primary menu.
+------------------------------------------------------------ */
+.row-menu {
+  background: $brick;
+  background: linear-gradient(93deg, #c01f1f, #8f1515);
+  box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.29) inset;
+  @include clearfix();
+  // Sticky menu row on page scroll.
+  &.sticky {
+    position: fixed;
+    top: -150px;
+    left: 0;
+    width: 100%;
+    transition: .3s;
+    opacity: .5;
+    z-index: 11;
+    // Animate menu on vertical scroll movements.
+    .sticky & {
+      top: 0;
+      opacity: 1;
+    }
+    // When user is logged in.
+    .admin-bar .sticky & {
+      top: 32px;
+    }
+    .header-menu .main-menu > li {
+      > a {
+        &.sf-with-ul::after {
+          //bottom: 17px;
+        }
+      }
+      > ul.sub-menu {
+        //top: 85px;
+      }
+    }
+  }
+  @include break($mobile) {
+    display: none;
+  }
+}
+
+.header-menu {
+  position: relative;
+  z-index: 3;
+  @include break($large) {
+  }
+  @include break($neutral) {
+  }
+  // Common styles.
+  .main-menu {
+    li {
+      display: block;
+      z-index: 2;
+      position: relative;
+      a {
+        text-decoration: none;
+        position: relative;
+        display: block;
+      }
+      span {
+        display: block;
+        position: relative;
+      }
+    }
+    // 1st level menus.
+    > li {
+      float: left;
+      @include break($neutral) {
+      }
+      > a {
+        @include font(18px, 48px, #fff, 700);
+        font-family: $montserrat;
+        padding: 0 25px;
+        transition: .3s;
+        @include break($large) {
+          font-size: 16px;
+        }
+        @include break($medium) {
+          font-size: 15px;
+        }
+        @include break($neutral) {
+          padding: 0 10px;
+        }
+        // Menu link decor.
+        span {
+          position: relative;
+          display: block;
+          /*&::before {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: #a7e45d;
+            transition: all .3s linear 0s;
+          }*/
+        }
+        // Parent menu item.
+        &.sf-with-ul {
+          // Bottom arrow.
+          // Menu link arrow decor.
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            margin-top: -2px;
+            right: 10px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 5px 4px 0 4px;
+            border-color: #ca9d9d transparent transparent transparent;
+            @include break($neutral){
+              display: none;
+            }
+          }
+        }
+        // Hover root item.
+        &:hover,
+        &:focus {
+          background: #7a0909;
+          span::before {
+            //width: 100%;
+          }
+          &::after {
+          }
+        }
+      }
+
+      // First button home icon.
+      &:first-child {
+        > a {
+          font-size: 0;
+          padding: 0;
+          text-align: center;
+          width: 45px;
+          height: 48px; // fix for IE.
+          span::after {
+            font-family: $font_awesome;
+            content: "\f015";
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 48px;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      // Parent root menu item.
+      &.menu-item-has-children {
+        // Keep activity for the root item while viewing dropdown.
+        &.sfHover > a {
+          background: #7a0909;
+          span::before {
+            //width: 100%;
+          }
+          &::after {
+            //background: url("../images/menu-arrow-hover.png");
+          }
+        }
+      }
+
+      // Active root menu item.
+      &.current_page_item,
+      &.current-menu-item,
+      &.current-page-ancestor,
+      &.current-menu-ancestor {
+        > a {
+          background: #7a0909;
+          span::before {
+            //width: 100%;
+          }
+          &::after {
+            //background: url("../images/menu-arrow-hover.png");
+          }
+        }
+      }
+
+      // Animate dropdown menu.
+      &.sfHover,
+      &:hover {
+        > ul.sub-menu {
+          transform: translateY(0);
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      // 2nd Level.
+      > ul.sub-menu {
+        background: #fff;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.26);
+        border: 1px solid #7b0a0a;
+        border-top: none;
+        display: none;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        z-index: 10;
+        width: 250px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .4s ease-out;
+        transform: translateY(30px);
+        @include break($medium) {
+        }
+        > li {
+          border-top: 1px solid #f3f3f3;;
+          &:first-child {
+            border-top: none;
+          }
+          // Current sub menu item.
+          &.current_page_item > a,
+          &.current-menu-ancestor > a,
+          &.current-menu-item > a {
+            background: #f5f5f5;
+            color: #b00b18;
+          }
+          > a {
+            font-size: 12px;
+            line-height: 18px;
+            color: $color_primary;
+            padding: 4px 15px 4px 12px;
+            @include break($medium) {
+            }
+            @include break($neutral) {
+            }
+            // Hover sub menu item.
+            &:hover {
+              background: #f5f5f5;
+              color: #b00b18;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+/* Mobile menu toggle icon.
+------------------------------------------------------------ */
+.mobile-menu-icon {
+  display: none;
+  height: 100%;
+  width: 70px;
+  z-index: 10;
+  color: #fff;
+  text-align: center;
+  font-size: 38px;
+  text-decoration: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  //background: url("../images/icon-menu-mobile.png") no-repeat 50% 50%;
+  -webkit-tap-highlight-color: $red;
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff;
+  }
+  @include break($mobile) {
+    display: block;
+  }
+  i {
+    margin: 0;
+  }
+  .fa-bars {
+    display: block;
+  }
+  .fa-times {
+    display: none;
+  }
+  .mm-opened & {
+    .fa-bars {
+      display: none;
+    }
+    .fa-times {
+      display: block;
+    }
+  }
+}
+
+/* Mobile menu theme overrides.
+------------------------------------------------------------ */
+.mm-menu {
+  background: #232325;
+  .mm-listview {
+
+    // Bottom border.
+    > li:after {
+      border-color: #343436;
+    }
+
+    // Next arrow
+    .mm-next {
+      background: #4b4b4b;
+    }
+
+    // Menu item.
+    li a,
+    li span {
+      @include font(14px, 1.5, #e6ddda, 700);
+      padding: 8px 10px 8px 20px;
+      -webkit-tap-highlight-color: $orange;
+      //font-size: 16px;
+    }
+    // Next arrow color.
+    > li > a.mm-prev::before,
+    > li > a.mm-next::after {
+      border-color: $orange;
+    }
+  }
+  // Active item.
+  li.current-menu-ancestor > a span,
+  li.current_page_item > a span,
+  li.current-menu-item > a span {
+    color: #fff;
+  }
+
+  // Header menu item.
+  .mm-header {
+    > a {
+      color: #c1c1c1;
+      font-weight: 300;
+      font-size: 14px;
+    }
+    // Slide back arrow.
+    .mm-btn {
+      background: #353535;
+      &::before,
+      &::after {
+        border-color: $orange;
+      }
+    }
+  }
+
+}

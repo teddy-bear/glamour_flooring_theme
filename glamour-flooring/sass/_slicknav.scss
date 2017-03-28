@@ -1,0 +1,193 @@
+/*!
+ * SlickNav Responsive Mobile Menu v1.0.10
+ * (c) 2016 Josh Cope
+ * licensed under MIT
+ */
+//colors
+$color_0: rgba(255, 255, 255, 0.75);
+$color_text: #fff;
+$color_shadow: #000;
+$color_hover_bg: #ccc;
+$color_hover_text: #222;
+
+.slicknav_btn {
+  position: relative;
+  display: block;
+  vertical-align: middle;
+  float: right;
+  padding: 0.438em 0.625em 0.438em 0.625em;
+  line-height: 1.125em;
+  cursor: pointer;
+  margin: 10px 13px 0 12px;
+  text-decoration: none;
+  text-shadow: 0 1px 1px $color_0;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #cecece;
+  .slicknav_icon-bar + .slicknav_icon-bar {
+    margin-top: 0.188em;
+  }
+  &.slicknav_open{
+    border-color:#c01f1f;
+    background: #c01f1f;
+    .slicknav_icon{
+      .slicknav_icon-bar{
+        transition: .4s ease-in-out;
+        background: #fff;
+        &:nth-child(2){
+          display: none;
+        }
+        &:nth-child(1){
+          transform: rotate(45deg);
+        }
+        &:nth-child(3){
+          transform: rotate(135deg);
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+}
+.slicknav_menu {
+  font-size: 16px;
+  box-sizing: border-box;
+  float: right;
+  * {
+    zoom: 1;
+    box-sizing: border-box;
+  }
+  .slicknav_menutxt {
+    display: block;
+    line-height: 1.188em;
+    float: left;
+    color: $color_text;
+    font-weight: bold;
+    text-shadow: 0 1px 3px $color_shadow;
+  }
+  .slicknav_icon {
+      position: absolute;
+      left: 50%;
+      display: block;
+      top: 50%;
+      transform: translate(-50%, -50%);
+        &:before { // Firefox Mobile v42 bugfix
+            background: transparent;
+            width: 1.125em;
+            height: 0.875em;
+            display: block;
+            content: "";
+            position: absolute;
+        }
+  }
+  .slicknav_no-text {
+    margin: 0;
+  }
+  .slicknav_icon-bar {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: #3a3a3a;
+  }
+  &:before {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+.slicknav_nav {
+  clear: both;
+  color: $color_text;
+  margin: 0;
+  padding: 0;
+  font-size: 0.875em;
+  list-style: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: #c01f1f;
+  position: fixed;
+  left: 0;
+  top: 50px;
+  width: 100%;
+  bottom: 0;
+  ul {
+    display: block;
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 0 0 18px;
+  }
+  li {
+    display: block;
+    border-bottom:1px solid #d43131;
+    &.slicknav_parent{
+      ul.sub-menu{
+        background: #7b0a0a;
+        margin-left: 0;
+        padding:10px 0 10px 27px;
+        li{
+          border-bottom:none;
+        }
+      }
+    }
+  }
+  .slicknav_arrow {
+    font-size: 20px;
+    float: right;
+    line-height: .8;
+    //font-family:$font_awesome;
+  }
+  .slicknav_item {
+    cursor: pointer;
+    a {
+      display: inline;
+    }
+  }
+  .slicknav_row {
+    display: block;
+    padding: 5px 10px;
+    margin: 2px 5px;
+    &:hover {
+          //border-radius: 6px;
+          //background: $color_hover_bg;
+          //color: $color_text;
+        }
+    }
+  a {
+    display: block;
+    padding: 5px 10px;
+    margin: 2px 5px;
+    text-decoration: none;
+    color: $color_text;
+    &:hover {
+      //border-radius: 6px;
+      //background: $color_hover_bg;
+      //color: $color_hover_text;
+    }
+  }
+  .slicknav_parent-link a {
+    display: inline;
+    padding: 0;
+    margin: 0;
+  }
+  .slicknav_txtnode {
+    margin-left: 15px;
+  }
+  .slicknav_item a {
+    padding: 0;
+    margin: 0;
+  }
+
+}
+.slicknav_brand {
+  float: left;
+  color: $color_text;
+  font-size: 18px;
+  line-height: 30px;
+  padding: 7px 12px;
+  height: 44px;
+}

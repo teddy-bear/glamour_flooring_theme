@@ -1,0 +1,252 @@
+.row-slogan {
+  font-family: $montserrat;
+  @include font(24px, 1.1, #fff, 700);
+  text-align: center;
+  text-transform: uppercase;
+  padding: 15px 0 14px;
+  background: #0a254b;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, .5);
+  @include break($large) {
+    font-size: 21px;
+  }
+  p {
+    padding: 0;
+  }
+  strong {
+  }
+}
+
+// Phone numbers
+.phone-widget {
+  float: right;
+  margin-top: 29px;
+  padding-left: 50px;
+  text-transform: uppercase;
+  font-family: $montserrat;
+  color: #674f44;
+  font-size: 16px;
+  line-height: 1;
+  position: relative;
+  &::before {
+    position: absolute;
+    font-family: $font_awesome;
+    top: 0;
+    left: 0;
+    content: '';
+    //background: url("../images/icon-phone.png");
+    width: 34px;
+    height: 40px;
+    /*@include font(40px, 1, #92a961);
+    content: "\f095";*/
+  }
+  @include break($neutral) {
+    //padding-top: 35px;
+  }
+  @include break($mobile) {
+    float: none;
+    overflow: hidden;
+    max-width: 400px;
+    margin: 0 auto;
+    clear: both;
+  }
+  a {
+    color: #5a7341;
+    font-size: 28px;
+    text-decoration: none;
+    @include break($medium) {
+      font-size: 24px;
+    }
+    @include break($neutral) {
+      font-size: 22px;
+    }
+  }
+}
+
+h3 {
+  @include font(28px, 1.3);
+  font-family: $montserrat;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 0 0 .7em;
+  padding-bottom: 1em;
+  position: relative;
+  &::after {
+    content: '';
+    background: #d8d8d8;
+    bottom: 0;
+    left: 0;
+    width: 120px;
+    height: 3px;
+    position: absolute;
+  }
+  em {
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  @include break($medium) {
+    font-size: 25px;
+  }
+  @include break($mobile) {
+    font-size: 23px;
+  }
+  .home & {
+    //@include font(40px, 1.2, #0c3762, 700);
+  }
+}
+
+// Testimonials carousel.
+// glamour flooring
+.testimonials-items {
+  .item {
+    position: relative;
+    padding: 0 50px;
+    text-align: center;
+    .post-content {
+      font-size: 18px;
+      color: #2c2c2c;
+      position: relative;
+      padding-bottom: 40px;
+      &::after {
+        content: '';
+        display: block;
+        width: 114px;
+        background: #9b9b9b;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        margin-left: -57px;
+        height: 1px;
+      }
+    }
+    .custom-fields {
+      color: #2c2c2c;
+      .name {
+        font-weight: 700;
+      }
+      .service {
+        font-style: italic;
+      }
+    }
+  }
+
+  // Pagination.
+  .owl-dots {
+    margin-top: 50px;
+    font-size: 0;
+    text-align: center;
+    > div {
+      display: inline-block;
+      margin: 0 9px;
+      span {
+        width: 13px;
+        height: 13px;
+        background: #d8d8d8;
+        display: block;
+      }
+      &.active,
+      &:hover {
+        span {
+          background: $brick;
+        }
+      }
+    }
+  }
+  // Prev/Next controls.
+  .owl-nav {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    > div {
+      background: url("../images/arrow-r.svg") no-repeat 50% 50%;
+      height: 30px;
+      width: 30px;
+      font-size: 0;
+      position: absolute;
+      &.owl-prev {
+        left: 0;
+        transform: rotateY(180deg);
+      }
+      &.owl-next {
+        right: 0;
+      }
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+}
+
+.featured-text {
+  @include clearfix();
+  padding: 20px 0;
+  border-top: 3px solid #dcdcdc;
+  border-bottom: 3px solid #dcdcdc;
+  margin: 15px 0 25px;
+  font-size: 36px;
+  font-weight: 300;
+  @include break($medium) {
+    font-size: 32px;
+  }
+  @include break($neutral) {
+    font-size: 22px;
+  }
+  @include break($x-small) {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .btn {
+    float: right;
+    @include break($x-small) {
+      float: none;
+      margin-top: 12px;
+    }
+  }
+}
+
+// Sidebar left page layout.
+.page-template-page-sidebar-left {
+  .site-content > .container {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: #dcdcdc;
+      left: 25%;
+      margin-left: -7px;
+      display: block;
+      @include break($neutral) {
+        display: none;
+      }
+    }
+  }
+  .sidebar-left {
+    padding-right: 20px;
+  }
+  .main-column {
+    padding-left: 20px;
+    @include break($neutral) {
+      padding-left: 0;
+    }
+  }
+}
+
+// Default page template.
+.page-template-default.not-home {
+  .main-column {
+  }
+}
+
+// Blog page layout.
+.page-template-page-blog {
+  .sidebar-left {
+  }
+  .main-column {
+  }
+}

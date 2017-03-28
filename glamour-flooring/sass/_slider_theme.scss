@@ -1,0 +1,255 @@
+/* Slider header theme.
+------------------------------------------------------------ */
+.flexslider {
+  position: relative;
+  background: #f3f3f3 url("../images/balls.svg") no-repeat 50% 50%;
+  /*opacity: 0;
+  transition: .4s;*/
+  overflow: hidden;
+  max-height: 520px;
+  .slides {
+    > li {
+      overflow: hidden;
+      position: relative;
+      display: none;
+      &:first-child {
+        display: block;
+      }
+      // Slider shadow decor.
+      /*&::before {
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        position: absolute;
+        height: 30%;
+        background: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0) 70%);
+        @include break($mobile) {
+          display: none;
+        }
+      }*/
+    }
+  }
+
+  // Caption text.
+  .caption-wrap {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-65%);
+    transition: all 0.5s ease-out .5s;
+    @include break($mobile) {
+      transform:translateY(0);
+      bottom:4px;
+      top:auto;
+    }
+    .flex-caption {
+      @include font(64px, 1.4, $brick, 700);
+      text-align: center;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      text-transform: uppercase;
+      @include break($large) {
+        font-size: 50px;
+      }
+      @include break($medium) {
+        font-size: 40px;
+      }
+      @include break($neutral) {
+        font-size: 35px;
+      }
+      @include break($mobile) {
+        font-size: 20px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      p {
+        padding: 0;
+      }
+      em {
+        color: $red_light;
+        font-style: normal;
+      }
+    }
+    .slider-arrow {
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      z-index: 4;
+      transform: translateX(-50%);
+      transition: all 0.5s ease-out .65s;
+      a {
+        display: inline-block;
+        background: url(../images/arrow-r.svg) no-repeat 50% 50%/contain;
+        width: 34px;
+        height: 34px;
+        transform: rotate(90deg);
+        transition: .3s;
+        //filter: drop-shadow(5px 0px 7px #000);
+        &:hover {
+          transform: rotate(90deg) translateX(5px);
+        }
+      }
+    }
+  }
+
+  // Animate current slide caption & on initial slide load.
+  .active-slide,
+  .slide-loaded {
+    .caption-wrap {
+      transform: translateY(-50%);
+      opacity: 1;
+      @include break($mobile) {
+        transform: none;
+      }
+    }
+    .slider-arrow {
+      bottom: -60px;
+      @include break($mobile) {
+        display: none;
+      }
+    }
+  }
+
+  // Left/right arrows.
+  .flex-direction-nav {
+    @include break($large) {
+    }
+    @include break($mobile) {
+      display: none;
+    }
+    li {
+      display: inline;
+    }
+    a {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      position: absolute;
+      top: 50%;
+      z-index: 11;
+      text-decoration: none;
+      width: 62px;
+      height: 62px;
+      margin-top: -31px;
+      background: none;
+      // background.
+      &::before {
+        content: '';
+        background: rgba(17, 17, 17, 0.38);
+        transition: all 0.3s ease 0s;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: block;
+      }
+      // arrow.
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        background: url("../images/button-wite-arrow.svg") no-repeat 60% 50%/ 18px auto;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: .5;
+      }
+      &:hover {
+        &:before {
+          background: rgba(17, 17, 17, 0.5);
+        }
+        &:after {
+          opacity: .7;
+        }
+      }
+      &.flex-prev {
+        left: 0;
+        &:after {
+          transform: rotateY(180deg);
+        }
+      }
+      &.flex-next {
+        right: 0;
+        &:after {
+
+        }
+      }
+    }
+  }
+
+  // Slider pagination(dots).
+  .flex-control-nav {
+    font-size: 0;
+    left: 0;
+    line-height: 0;
+    position: absolute;
+    bottom: 23px;
+    z-index: 3;
+    width: 100%;
+    text-align: center;
+    @include break($medium) {
+    }
+    @include break($mobile) {
+      display: none;
+    }
+    li {
+      display: inline-block;
+      padding: 0 9px;
+      a {
+        //background: url("../images/slider-dots.png") no-repeat -22px 50%;
+        @include circle(8px, rgba(255, 255, 255, 0.5));
+        opacity: 0.45;
+        border: solid 1px #000;
+        cursor: pointer;
+        display: block;
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          top: -2px;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 1px solid #00255c;
+          background: #89ef43;
+          border-radius: 50%;
+          display: none;
+        }
+        &:hover {
+          background: #89ef43;
+          opacity: .7;
+        }
+        &.flex-active {
+          background: none;
+          border: none;
+          width: 10px;
+          height: 10px;
+          opacity: .7;
+          &::before {
+            display: block;
+          }
+        }
+      }
+    }
+
+  }
+
+  // Slider hover.
+  .non-touch &:hover {
+    .flex-direction-nav {
+      display: block;
+    }
+  }
+
+  // Show slider on page load.
+  .loaded & {
+    opacity: 1;
+    .slides {
+      > li {
+        display: block;
+      }
+    }
+  }
+}

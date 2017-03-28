@@ -1,0 +1,98 @@
+/* Gravity forms plugin overrides.
+------------------------------------------------------------ */
+body .gform_wrapper {
+  ul li {
+    padding: 0;
+  }
+ h2.gsection_title {
+   &::before {
+     display: none;
+   }
+ }
+
+  .top_label {
+    .gfield_label {
+      margin: 0;
+      font-size: 13px;
+      font-weight: normal;
+    }
+    .gfield .medium {
+      width: 100%;
+    }
+  }
+  .gfield_date_day label,
+  .gfield_date_month label,
+  .gfield_date_year label,
+  .gfield_time_ampm label,
+  .gfield_time_hour label,
+  .gfield_time_minute label,
+  .ginput_complex label,
+  .instruction {
+    white-space: normal;
+  }
+  @include break($x-small) {
+    .left_label li.field_sublabel_below .gfield_label {
+      float: none;
+      width: 100%;
+    }
+    .left_label div.ginput_complex, .right_label div.ginput_complex,
+    .left_label input.medium,
+    .left_label select.medium,
+    .right_label input.medium,
+    .right_label select.medium {
+      width: 100%;
+    }
+  }
+  select {
+    height: 30px;
+  }
+  input.small,
+  select.small,
+  input.small,
+  select.small {
+    min-width: 150px;
+  }
+
+  .percentbar_blue {
+    min-width: 30px;
+  }
+
+  .gform_page_footer {
+    height: 50px;
+    margin: 10px 0 0;
+    padding: 10px 0 0;
+  }
+}
+
+/* Sidebar form.
+------------------------------------------------------------ */
+.site .quick-contact {
+  background: #ececec;
+  padding: 20px 25px 5px;
+  .gfield_html {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: $blue;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.3;
+    strong {
+      display: block;
+      font-size: 1.3em;
+      color: $green;
+    }
+  }
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  textarea {
+    border-color: #b8b8b8;
+    color: #848484;
+    &:hover,
+    &:focus {
+      background: #f7f7f7;
+      color: #2f2f2f;
+      border-color: #7e7e7e;
+    }
+  }
+}

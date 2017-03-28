@@ -1,0 +1,22 @@
+/* All custom icons */
+.mce-toolbar .mce-btn .mce-i-dashicon {
+}
+
+/* Sub items */
+.mce-menu-item .mce-text {
+  font-size: 12px;
+}
+.wp-admin .mce-menu-has-icons i.mce-ico {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Grid elements icon */
+.mce-toolbar .mce-btn .dashicons-welcome-widgets-menus {
+}
+
+
+/* Layout fix for button groups */
+.mce-toolbar .mce-container .mce-btn-group {
+  display: inline-block;
+}

@@ -1,0 +1,1230 @@
+/* Main Theme Styles file */
+// Major components.
+@import "reset";
+@import "variables";
+@import "functional";
+@import "header";
+@import "footer";
+@import "slider_theme";
+@import "owl.carousel.core";
+@import "magnific_popup";
+@import "elements";
+@import "woocommerce";
+@import "slicknav";
+//@import "gravity_forms";
+
+/* -------------------------------------------------------------------------------------------------------------------
+                                                  Custom blocks & decor.
+------------------------------------------------------------------------------------------------------------------- */
+.row-slider {
+  position: relative;
+  overflow: hidden;
+  .featured-text-holder {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    @include break($neutral) {
+      position: relative;
+      background: #000;
+    }
+    .inner {
+      text-align: center;
+      font-family: $montserrat;
+      @include font(24px, 1.4, #fff, 700);
+      position: relative;
+      padding: 20px 30px 14px;
+      background: url(../images/trapeze-black-bg.svg) no-repeat 50% 50% / contain;
+      @include break($medium) {
+        padding: 13px 30px 8px;
+        font-size: 18px;
+      }
+      @include break($neutral) {
+        background: none;
+      }
+      @include break($mobile) {
+        font-size: 16px;
+      }
+      em {
+        font-style: normal;
+        color: #f5e518;
+      }
+    }
+  }
+}
+
+/* Upper content row on the home page.
+------------------------------------------------------------ */
+.row-content-top {
+  padding: 40px 0;
+  text-align: center;
+  @include break($mobile) {
+    padding: 13px 0 0;
+  }
+  .welcome-text {
+    font-family: $montserrat;
+    font-size: 30px;
+    line-height: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    padding-bottom: 40px;
+    em {
+      font-style: normal;
+      color: #b00b18;
+    }
+    strong {
+      font-size: 48px;
+      text-transform: uppercase;
+    }
+    @include break($medium){
+      strong{
+        font-size: 36px;
+      }
+      font-size: 26px;
+    }
+    @include break($mobile) {
+      font-size: 16px;
+      line-height: 1.5;
+      text-shadow: none;
+      padding-bottom: 28px;
+      strong {
+        font-size: 24px;
+        line-height: 1.3;
+      }
+    }
+    @include break($x-small) {
+      text-align: left;
+    }
+  }
+  .red-icons {
+    @include break($x-small) {
+      padding: 0 25px;
+    }
+    .block {
+      @include break($mobile) {
+        margin-bottom: 24px;
+      }
+      p {
+        @include break($mobile) {
+          padding-bottom: 0;
+        }
+      }
+      img {
+        margin-bottom: 10px;
+        @include break($mobile) {
+          margin-bottom: 0;
+        }
+      }
+      .text {
+        font-size: 14px;
+      }
+      strong {
+        font-family: $montserrat;
+        font-size: 20px;
+        @include break($mobile) {
+        }
+        a {
+          text-decoration: none;
+          color: inherit;
+          &:hover {
+            color: #c01f1f;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Row black & red on the home page.
+------------------------------------------------------------ */
+.row-black-red {
+  background: #111;
+  position: relative;
+  height: 170px;
+  overflow: hidden;
+  @include break($mobile) {
+    display: none;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: $red-brown;
+    background: linear-gradient(106deg, #c01f1f, #8f1515);
+  }
+  .container {
+    height: 100%;
+  }
+  p {
+    padding: 0;
+  }
+  .block-red {
+    width: 50%;
+    float: left;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: $montserrat;
+    @include font(24px, 1.3, #fff, 700);
+    padding: 35px 0 0 0;
+    position: relative;
+    height: 100%;
+    // Black arrow icon.
+    &::before {
+      content: '';
+      background: url("../images/arrow-r.svg") no-repeat 50% 50% / contain;
+      height: 30px;
+      width: 30px;
+      font-size: 0;
+      position: absolute;
+      top: 50%;
+      right: -15px;
+      z-index: 2;
+      margin-top: -15px;
+      pointer-events: none;
+    }
+    // Red angle.
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -69px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 85px 0 85px 70px;
+      border-color: transparent transparent transparent #8f1515;
+    }
+    strong {
+      font-size: 2em;
+    }
+    @include break($medium) {
+      font-size: 18px;
+      padding: 47px 0 0;
+    }
+    @include break($neutral) {
+      font-size: 14px;
+      padding: 53px 0 0;
+    }
+  }
+  .block-dark {
+    float: right;
+    padding-top: 50px;
+    width: 50%;
+    padding-left: 100px;
+    @include clearfix();
+    @include break($medium) {
+      padding-top: 10px;
+      text-align: center;
+    }
+    .text {
+      float: left;
+      font-size: 12px;
+      color: #d8d8d8;
+      @include break($medium) {
+        float: none;
+      }
+      .phone-number {
+        font-family: $montserrat;
+        letter-spacing: -0.6px;
+        @include font(32px, 1.2, #fff, 700);
+      }
+    }
+    .btn-large {
+      float: right;
+      padding-right: 60px;
+      &::after {
+        right: 28px;
+      }
+      &:hover {
+        background: $red-brown;
+        background: linear-gradient(106deg, #c01f1f, #8f1515);
+      }
+      @include break($medium) {
+        float: none;
+      }
+    }
+  }
+}
+
+/* Row with featured blocks on the home page.
+------------------------------------------------------------ */
+.row-content-middle {
+  background: #f0eeed;
+  padding: 50px 0;
+  @include break($mobile) {
+    padding: 30px 0 20px;
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 7px;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%); /* w3c */
+    }
+  }
+  .text-featured {
+    text-align: center;
+    padding-bottom: 30px;
+    @include break($mobile) {
+      text-align: justify;
+    }
+    h2 {
+      font-size: 36px;
+      margin-bottom: 5px;
+      @include break($medium){
+        font-size: 28px;
+      }
+      @include break($mobile) {
+        font-size: 22px;
+        line-height: 1.36;
+        margin-bottom: 15px;
+        text-shadow: none;
+      }
+      @include break($x-small) {
+        text-align: left;
+      }
+    }
+    h3 {
+      @include break($mobile) {
+        text-shadow: none;
+      }
+      @include break($x-small) {
+        text-align: left;
+      }
+    }
+  }
+  .featured-blocks {
+    padding-bottom: 30px;
+    .block {
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+      @include break($mobile) {
+        margin: 0 -15px;
+      }
+      h5 {
+        @include break($mobile) {
+          font-size: 18px;
+        }
+      }
+      p {
+        padding: 0;
+      }
+      img {
+        width: 100%;
+      }
+      .text {
+        font-size: 14px;
+        padding: 20px 20px 15px;
+      }
+      a {
+        &:hover {
+          color: #c01f1f;
+          text-decoration: none;
+        }
+        &.more {
+          @include font(16px, 57px, $color_primary, 600);
+          display: block;
+          background: #f5f5f5;
+          padding: 0 5px 0 43px;
+          letter-spacing: -0.3px;
+          text-decoration: none;
+          position: relative;
+          transition: .3s;
+          &::before {
+            font-family: $font_awesome;
+            content: "\f0c9"; // bars.
+            color: $brick;
+            position: absolute;
+            line-height: 1;
+            top: 20px;
+            left: 17px;
+          }
+          &:after {
+            display: none;
+          }
+          &:hover {
+            color: #fff;
+            background: $brick;
+            background: linear-gradient(101deg, #c01f1f, #8f1515);
+            &::before {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  .btn-large {
+    font-size: 20px;
+    color: $color_primary;
+    background: none;
+    border: 2px solid $color_primary;
+    margin: 0 auto;
+    max-width: 400px;
+    display: block;
+    &::after {
+      background-image: url("../images/arrow-r.svg");
+      right: 25px;
+    }
+    &:hover {
+      background: $color_primary;
+      color: #fff;
+      &::after {
+        background-image: url("../images/button-wite-arrow.svg");
+      }
+    }
+    @include break($mobile) {
+      font-size: 16px;
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+/* Row with video on the home page.
+------------------------------------------------------------ */
+.row-white-bg {
+  background: #fff;
+  padding: 50px 0;
+  @include break($mobile) {
+    padding: 30px 0;
+  }
+  .block-video {
+    text-align: center;
+    .content-video {
+      margin-top: 10px;
+      box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.12);
+      border-radius: 10px;
+      border: solid 8px #fff;
+    }
+  }
+  .block-rsi {
+    @include break($mobile) {
+      padding-top: 30px;
+    }
+    h4 {
+      color: $color_primary;
+      @include break($mobile) {
+        color: #0e0e0e;
+      }
+    }
+    .block {
+      padding: 0 0 30px 55px;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url("../images/icon-financing-small.svg") no-repeat;
+        width: 40px;
+        height: 40px;
+      }
+      &:first-child + div {
+        &::before {
+          background: url("../images/icon-home-small.svg") no-repeat;
+        }
+        + div {
+          &::before {
+            background: url("../images/expert-installer-small.svg") no-repeat;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Row with testimonials on the home page.
+------------------------------------------------------------ */
+.row-testimonials {
+  background: #f2f2f2;
+  padding: 70px 0 50px;
+  position: relative;
+  text-align: center;
+  &::before {
+    content: '';
+    background: $brick;
+    height: 5px;
+    width: 100%;
+    background: linear-gradient(to right, #c01f1f, #8f1515);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  @include break($mobile) {
+    padding: 40px 0 17px;
+  }
+  h3 {
+    font-size: 36px;
+    text-transform: capitalize;
+    padding-left: 55px;
+    position: relative;
+    display: inline-block;
+    // Quote icon.
+    &::before {
+      content: "";
+      background: url(../images/icon-quote.svg) no-repeat 50% 50%;
+      width: 45px;
+      height: 35px;
+      position: absolute;
+      top: 8px;
+      left: 0;
+    }
+    @include break($mobile) {
+      font-size: 24px;
+      &::before {
+        top: 0;
+        transform: scale(.7);
+      }
+    }
+  }
+  > .container{
+    @include break($x-small){
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+  // Testimonials carousel.
+  .testimonials-items {
+    .item {
+      position: relative;
+      padding: 0 50px;
+      text-align: center;
+      @include break($mobile) {
+        padding: 0;
+      }
+      .post-content {
+        font-size: 18px;
+        color: #2c2c2c;
+        position: relative;
+        padding-bottom: 40px;
+        @include break($mobile) {
+          font-size: 14px;
+        }
+        &::after {
+          content: '';
+          display: block;
+          width: 114px;
+          background: #9b9b9b;
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          margin-left: -57px;
+          height: 1px;
+        }
+      }
+      .custom-fields {
+        color: #2c2c2c;
+        .name {
+          font-weight: 700;
+        }
+        .service {
+          font-style: italic;
+        }
+      }
+    }
+
+    // Pagination.
+    .owl-dots {
+      margin-top: 50px;
+      font-size: 0;
+      text-align: center;
+      @include break($mobile) {
+        display: none;
+      }
+      > div {
+        display: inline-block;
+        margin: 0 9px;
+        span {
+          width: 13px;
+          height: 13px;
+          background: #d8d8d8;
+          display: block;
+        }
+        &.active,
+        &:hover {
+          span {
+            background: $brick;
+          }
+        }
+      }
+    }
+    // Prev/Next controls.
+    .owl-nav {
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      > div {
+        background: url("../images/arrow-r.svg") no-repeat 50% 50%;
+        height: 30px;
+        width: 30px;
+        font-size: 0;
+        position: absolute;
+        &.owl-prev {
+          left: 0;
+          transform: rotateY(180deg);
+        }
+        &.owl-next {
+          right: 0;
+        }
+        &:hover {
+          opacity: .8;
+        }
+      }
+      @include break($mobile) {
+        display: none;
+      }
+    }
+  }
+  .block-images {
+    @include break($mobile) {
+      margin-top: 34px;
+    }
+    img {
+      border: 8px solid #fff;
+      box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.17);
+      margin-bottom: 20px;
+    }
+  }
+  .custom-link {
+    color: $color_primary;
+    text-decoration: none;
+    font-size: 28px;
+    font-style: italic;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    padding-right: 35px;
+    &::after {
+      background: url(../images/arr-up.svg) no-repeat 50%;
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 20px;
+      height: 100%;
+      transition: .3s;
+    }
+    &:hover {
+      color: #000;
+      text-decoration: none;
+      &::after {
+        transform: translateY(-5px);
+      }
+    }
+    @include break($neutral) {
+      font-size: 20px;
+    }
+    @include break($mobile) {
+      font-size: 14px;
+      display: block;
+    }
+  }
+}
+
+/* Row with products on the home page.
+------------------------------------------------------------ */
+.home-products {
+  div[class*="col-"]{
+    @include break($x-small){
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  ul.products {
+    li.product {
+      width: 25%;
+      text-align: left;
+      @include break($mobile){
+        width: 50%;
+      }
+      @include break($x-small){
+        width: 100%;
+      }
+      h3 {
+        text-transform: uppercase;
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+/* Bottom content blocks(4).
+------------------------------------------------------------ */
+.row-content-bottom {
+  padding: 50px 0;
+  .block {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d8d8d8;
+    margin-bottom: 30px;
+    /*strong {
+      @include font(28px, 1.3);
+      font-family: $montserrat;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      display: block;
+      padding-bottom: 10px;
+    }*/
+  }
+}
+
+/* Red bottom line.
+------------------------------------------------------------ */
+.red-line {
+  background: $brick;
+  background: linear-gradient(98deg, #c01f1f, #8f1515);
+  padding: 50px 0 40px;
+  @include clearfix();
+  @include break($medium) {
+    text-align: center;
+  }
+  @include break($mobile) {
+    padding: 20px 0;
+  }
+  .text {
+    font-family: $montserrat;
+    @include font(42px, 1.6, #fff, 700);
+    float: left;
+    @include break($medium) {
+      float: none;
+      font-size: 30px;
+    }
+    @include break($mobile) {
+      font-size: 29px;
+      padding: 0 6%;
+    }
+  }
+  .btn-large {
+    float: right;
+    margin-top: 6px;
+    width: 290px;
+    border: 1px solid #fff;
+    background: transparent;
+    &::after {
+      right: 40px;
+    }
+    &:hover {
+      background: #000;
+    }
+    @include break($medium) {
+      float: none;
+    }
+  }
+}
+
+/* Contact form 7 inside popup.
+------------------------------------------------------------ */
+#popup-form {
+  background-color: #f0f0f0;
+  border: solid 10px #ffffff;
+  padding: 20px 45px 20px;
+  max-width: 510px;
+  margin: 40px auto;
+  position: relative;
+  .form-bottom-row {
+    text-align: center;
+  }
+  .btn-large {
+    padding: 17px 25px;
+  }
+}
+
+/* -------------------------------------------------------------------------------------------------------------------
+                                                 Sidebar Components
+------------------------------------------------------------------------------------------------------------------- */
+/*Sidebar single service
+ -------------------------------*/
+.sidebar {
+  .financing-banner {
+    @include break($mobile) {
+      display: none;
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------------------------------------------------
+                                                 Pages & Post Types
+------------------------------------------------------------------------------------------------------------------- */
+
+/* Blocks on services page.
+------------------------------------------------------------ */
+.services-blocks {
+  padding-bottom: 30px;
+  .item {
+    margin-bottom: 30px;
+    h5 {
+      a {
+        color: $color_primary;
+        text-decoration: none;
+        &:hover {
+          color: $brick;
+        }
+      }
+    }
+    img {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .post-content {
+      font-size: 14px;
+      padding: 0 0 15px;
+    }
+    a.more {
+      @include font(16px, 1.3, $color_primary, 600);
+      display: inline-block;
+      text-transform: capitalize;
+      padding: 0 0 0 24px;
+      letter-spacing: -0.3px;
+      text-decoration: none;
+      position: relative;
+      transition: .3s;
+      &::before {
+        font-family: $font_awesome;
+        content: "\f0c9"; // bars.
+        color: $brick;
+        position: absolute;
+        line-height: 1;
+        top: 2px;
+        left: 0;
+      }
+      &:after {
+        display: none;
+      }
+      &:hover {
+        color: $brick;
+        &::before {
+          color: $brick;
+        }
+      }
+    }
+  }
+}
+
+/* Single service page.
+------------------------------------------------------------ */
+.single-services {
+  .padding-center {
+    padding: 0 10%;
+    margin-bottom: 46px;
+    text-align: center;
+  }
+}
+
+.ss-title-block {
+  background: #fff;
+  margin-bottom: 50px;
+  padding-right: 34px;
+  .featured-thumbnail {
+    line-height: 0;
+    font-size: 0;
+    position: relative;
+    overflow: hidden;
+    .image-title {
+      position: absolute;
+      bottom: 47px;
+      margin-left: 45px;
+      width: 100%;
+      font-family: $montserrat;
+      @include font(40px, 1.4, #fff, 700);
+      padding-bottom: 6px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 2px;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        background: #fff;
+      }
+    }
+  }
+  .ss-title {
+    padding-bottom: 20px;
+    h3 {
+      margin-top: 29px;
+      font-family: $montserrat;
+      @include font(28px, 1.43, #111111, 400);
+      padding-bottom: 13px;
+      margin-bottom: 19px;
+      position: relative;
+      text-transform: none;
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background: #d8d8d8;
+      }
+    }
+    .btn-large {
+      margin-top: 21px;
+    }
+  }
+}
+
+.black-line-footer {
+  background: #f6f6f6;
+  padding-top: 20px;
+  .site-content {
+    padding-bottom: 0;
+  }
+  .content {
+    div[class*="col-"] {
+      margin-bottom: 15px;
+    }
+  }
+  .inner {
+    text-align: center;
+    font-family: $montserrat;
+    @include font(24px, 1, #fff, 700);
+    position: relative;
+    padding: 22px 30px 17px;
+    background: url(../images/trapeze-black-bg.svg) no-repeat 50% 50% / contain;
+    @include break($large) {
+      padding: 20px 30px 11px;
+    }
+    @include break($neutral) {
+      font-size: 16px;
+      padding: 16px 20px 11px;
+    }
+    @include break($mobile) {
+      background: #000;
+      line-height: 1.4;
+    }
+    em {
+      font-style: normal;
+      color: #f5e518;
+    }
+    p {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.white-block {
+  text-align: center;
+  margin: 45px 0 60px;
+  padding: 40px 10% 49px;
+  background: #fff;
+  p {
+    @include font(18px, 1.22, #3a3a3a, 700);
+  }
+  .btn-large {
+    margin-top: 35px;
+  }
+}
+
+/* Video Page.
+------------------------------------------------------------ */
+.page-template-page-video {
+  .videos-list {
+    .item {
+      margin-bottom: 60px;
+      h4 {
+        @include font(24px, 1.4, #c01f1f, 400);
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .video {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    margin-bottom: 27px;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+  }
+}
+
+/* Contact Page.
+------------------------------------------------------------ */
+.page-contact {
+  .contact-details {
+    padding-bottom: 20px;
+    .row {
+      //border-bottom: #d8d8d8 solid 1px;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      color: #111;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        right: 15px;
+        height: 1px;
+        background: #d8d8d8;
+        display: block;
+      }
+    }
+    .office-hours {
+      font-size: 1rem;
+    }
+    em {
+      font-size: 1rem;
+      color: #717171;
+      font-style: normal;
+    }
+  }
+  div.wpcf7 {
+    margin-top: 30px;
+    .wpcf7-submit {
+      @include break($mobile) {
+        width: 282px;
+        line-height: 58px;
+        padding: 0 30px 0 0;
+        text-align: center;
+        font-size: 22px;
+        background: #c01f1f url(../images/button-wite-arrow.svg) no-repeat 85% 50%;
+      }
+    }
+    .g-recaptcha {
+      @include break($neutral){
+        transform: scale(0.7);
+        transform-origin: 0 0;
+      }
+      @include break($x-small) {
+        transform: scale(0.8);
+        transform-origin: 50% 50%;
+      }
+    }
+
+  }
+}
+
+/* Portfolio page.
+------------------------------------------------------------ */
+.portfolio-filter {
+  overflow: hidden;
+  margin-bottom: 30px;
+  li {
+    display: block;
+    margin-right: 15px;
+    float: left;
+    span {
+      display: block;
+      padding: 0 20px;
+      line-height: 40px;
+      float: left;
+      cursor: pointer;
+      border-radius: 4px;
+      background-color: #f6f6f6;
+      border: solid 1px #d2d2d2;
+      @include break($medium) {
+      }
+      @include break($neutral) {
+      }
+      &:hover {
+        color: #fff;
+        background: #111;
+      }
+      &.active {
+        color: #fff;
+        background: #111;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.portfolio-blocks {
+  .inner {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    background: #fff;
+    img {
+      width: 100%;
+    }
+    .post-content {
+      padding: 10px 15px 15px;
+      h5 {
+        margin: 0 0 0.3em;
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+      .category {
+        font-size: 14px;
+        color: #555;
+        text-transform: capitalize;
+      }
+    }
+    a.view-photos {
+      display: block;
+      color: $color_primary;
+      letter-spacing: -0.3px;
+      font-weight: 600;
+      line-height: 57px;
+      background: #f5f5f5;
+      text-align: center;
+      text-decoration: none;
+      i {
+        font-style: normal;
+        color: $brick;
+        margin-right: 5px;
+      }
+      &:hover {
+        background: linear-gradient(101deg, #c01f1f, #8f1515);
+        color: #fff;
+        i {
+          color: #fff;
+        }
+      }
+    }
+    &:hover {
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+/* Portfolio single page.
+------------------------------------------------------------ */
+.single-portfolio {
+
+  .entry-content {
+
+  }
+  .portfolio-gallery {
+    margin-bottom: 30px;
+    .owl-stage-outer {
+    }
+    img {
+      display: block;
+      width: 100%;
+    }
+    // Prev / next arrows.
+    .owl-nav {
+      font-size: 0;
+      color: #c1b9b0;
+      div {
+        display: block;
+        font-size: 0;
+        line-height: 0;
+        position: absolute;
+        top: 50%;
+        z-index: 11;
+        text-decoration: none;
+        width: 62px;
+        height: 62px;
+        margin-top: -31px;
+        background: none;
+        // background.
+        &::before {
+          content: '';
+          background: rgba(17, 17, 17, 0.38);
+          transition: all 0.3s ease 0s;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          display: block;
+        }
+        // arrow.
+        &::after {
+          content: '';
+          display: block;
+          width: 100%;
+          background: url("../images/button-wite-arrow.svg") no-repeat 60% 50%/ 18px auto;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: .5;
+        }
+        &:hover {
+          &:before {
+            background: rgba(17, 17, 17, 0.5);
+          }
+          &:after {
+            opacity: .7;
+          }
+        }
+        &.owl-prev {
+          left: 0;
+          &:after {
+            transform: rotateY(180deg);
+          }
+        }
+        &.owl-next {
+          right: 0;
+          &:after {
+
+          }
+        }
+      }
+    }
+  }
+
+  .related-portfolios {
+    border-top: solid 1px #979797;
+    padding-top: 40px;
+    margin-top: 50px;
+    h2 {
+      text-align: center;
+      text-transform: capitalize;
+    }
+  }
+}
+
+/* Testimonials page.
+------------------------------------------------------------ */
+.testimonials-page {
+  .main-column {
+    .recent-posts {
+      padding-top: 25px;
+    }
+  }
+  .testimonials.type-testimonials {
+    padding-left: 57px;
+    padding-bottom: 36px;
+    position: relative;
+    border-bottom: 1px solid #9b9b9b;
+    margin-bottom: 33px;
+    &::before {
+      content: "";
+      background: url(../images/icon-quote.svg) no-repeat 50% 50%;
+      width: 45px;
+      height: 35px;
+      position: absolute;
+      top: 5px;
+      left: 0;
+    }
+    .content {
+      margin-bottom: 21px;
+      font-size: 18px;
+      line-height: 1.44;
+    }
+    .custom-fields {
+      font-size: 16px;
+      .name {
+        font-weight: 700;
+      }
+      .service {
+        font-style: italic;
+      }
+    }
+  }
+}

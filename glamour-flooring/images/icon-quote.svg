@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="34px" viewBox="0 0 44 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>A6751DE8-95EF-4F67-BAB0-BD4C8BF19FDF</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M129.04,48.54 L133.96,38.46 L126.46,38.46 L126.46,23.46 L141.46,23.46 L141.46,38.46 L136.54,48.54 L129.04,48.54 Z M109,48.54 L114.04,38.46 L106.54,38.46 L106.54,23.46 L121.54,23.46 L121.54,38.46 L116.5,48.54 L109,48.54 Z" id="path-1"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="glamour-floring-home" transform="translate(-280.000000, -3099.000000)">
+            <g id="Testimonials" transform="translate(178.000000, 3078.000000)">
+                <g id="icon-quote">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#C01F1F" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
