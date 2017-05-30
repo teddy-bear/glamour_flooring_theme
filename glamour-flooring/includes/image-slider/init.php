@@ -38,9 +38,9 @@ function post_type_slider() {
 	register_post_type( 'slider',
 		array(
 			'labels'              => $labels,
-			'public'              => TRUE,
-			'publicly_queryable'  => FALSE,
-			'exclude_from_search' => TRUE,
+			'public'              => true,
+			'publicly_queryable'  => false,
+			'exclude_from_search' => true,
 			'capability_type'     => 'post',
 			'menu_icon'           => 'dashicons-images-alt2',
 			'menu_position'       => 10,
@@ -132,11 +132,11 @@ function slider_settings_init() {
 // Arrows field.
 function arrows_render() {
 	$options = get_option( 'slider_settings' ); ?>
-	<label><input type="radio" name="slider_settings[arrows]"
-	              value="1" <?php checked( $options['arrows'], 1 ); ?>>Yes</label>
-	<label><input type="radio"
-	              name="slider_settings[arrows]" <?php checked( $options['arrows'], 0 ); ?>
-	              value="0">No</label>
+    <label><input type="radio" name="slider_settings[arrows]"
+                  value="1" <?php checked( $options['arrows'], 1 ); ?>>Yes</label>
+    <label><input type="radio"
+                  name="slider_settings[arrows]" <?php checked( $options['arrows'], 0 ); ?>
+                  value="0">No</label>
 	<?php
 }
 
@@ -144,11 +144,11 @@ function arrows_render() {
 function navigation_render() {
 	$options = get_option( 'slider_settings' );
 	?>
-	<label><input type="radio"
-	              name="slider_settings[navigation]" <?php checked( $options['navigation'], 0 ); ?>
-	              value="0">Hidden</label>
-	<label><input type="radio" name="slider_settings[navigation]"
-	              value="1" <?php checked( $options['navigation'], 1 ); ?>>Dots</label>
+    <label><input type="radio"
+                  name="slider_settings[navigation]" <?php checked( $options['navigation'], 0 ); ?>
+                  value="0">Hidden</label>
+    <label><input type="radio" name="slider_settings[navigation]"
+                  value="1" <?php checked( $options['navigation'], 1 ); ?>>Dots</label>
 	<?php
 
 }
@@ -156,7 +156,7 @@ function navigation_render() {
 // Auto play.
 function autoplay_render() {
 	$options = get_option( 'slider_settings' ); ?>
-	<input type='checkbox' name='slider_settings[autoplay]' <?php checked( $options['autoplay'], 1 ); ?> value='1'>
+    <input type='checkbox' name='slider_settings[autoplay]' <?php checked( $options['autoplay'], 1 ); ?> value='1'>
 	<?php
 }
 
@@ -165,16 +165,12 @@ function slide_delay_render() {
 
 	$options = get_option( 'slider_settings' );
 	?>
-	<select name='slider_settings[slide_delay]'>
-		<option value='1000' <?php selected( $options['slide_delay'], 1000 ); ?>>1</option>
-		<option value='2000' <?php selected( $options['slide_delay'], 2000 ); ?>>2</option>
-		<option value='3000' <?php selected( $options['slide_delay'], 3000 ); ?>>3</option>
-		<option value='4000' <?php selected( $options['slide_delay'], 4000 ); ?>>4</option>
-		<option value='5000' <?php selected( $options['slide_delay'], 5000 ); ?>>5</option>
-		<option value='6000' <?php selected( $options['slide_delay'], 6000 ); ?>>6</option>
-		<option value='7000' <?php selected( $options['slide_delay'], 7000 ); ?>>7</option>
-		<option value='8000' <?php selected( $options['slide_delay'], 8000 ); ?>>8</option>
-	</select>
+    <select name='slider_settings[slide_delay]'>
+		<?php for ( $i = 0; $i < 9; $i ++ ) { ?>
+			<?php $time = $i * 1000; ?>
+            <option value='<?php echo $time; ?>' <?php selected( $options['slide_delay'], $time ); ?>><?php echo $i; ?></option>
+		<?php } ?>
+    </select>
 
 	<?php
 
@@ -185,10 +181,10 @@ function animation_render() {
 
 	$options = get_option( 'slider_settings' );
 	?>
-	<select name='slider_settings[animation]'>
-		<option value='fade' <?php selected( $options['animation'], 'fade' ); ?> checked>fade</option>
-		<option value='slide' <?php selected( $options['animation'], 'slide' ); ?>>slide</option>
-	</select>
+    <select name='slider_settings[animation]'>
+        <option value='fade' <?php selected( $options['animation'], 'fade' ); ?> checked>fade</option>
+        <option value='slide' <?php selected( $options['animation'], 'slide' ); ?>>slide</option>
+    </select>
 
 	<?php
 
@@ -199,11 +195,11 @@ function slide_direction_render() {
 
 	$options = get_option( 'slider_settings' );
 	?>
-	<select name='slider_settings[slide_direction]'>
-		<option value='horizontal' <?php selected( $options['slide_direction'], 'horizontal' ); ?> checked>horizontal
-		</option>
-		<option value='vertical' <?php selected( $options['slide_direction'], 'vertical' ); ?>>vertical</option>
-	</select>
+    <select name='slider_settings[slide_direction]'>
+        <option value='horizontal' <?php selected( $options['slide_direction'], 'horizontal' ); ?> checked>horizontal
+        </option>
+        <option value='vertical' <?php selected( $options['slide_direction'], 'vertical' ); ?>>vertical</option>
+    </select>
 
 	<?php
 
@@ -214,7 +210,7 @@ function slider_textarea_field_2_render() {
 
 	$options = get_option( 'slider_settings' );
 	?>
-	<textarea cols='40' rows='5' name='slider_settings[slider_textarea_field_2]'>
+    <textarea cols='40' rows='5' name='slider_settings[slider_textarea_field_2]'>
 		<?php echo $options['slider_textarea_field_2']; ?>
  	</textarea>
 	<?php
@@ -232,9 +228,9 @@ function slider_settings_section_callback() {
 function slider_options_page() {
 
 	?>
-	<form action='options.php' method='post'>
+    <form action='options.php' method='post'>
 
-		<h2><?php __( 'Main settings', 'image-slider' ) ?></h2>
+        <h2><?php __( 'Main settings', 'image-slider' ) ?></h2>
 
 		<?php
 		settings_fields( 'defaultSettings' );
@@ -242,7 +238,7 @@ function slider_options_page() {
 		submit_button();
 		?>
 
-	</form>
+    </form>
 	<?php
 
 }
@@ -263,7 +259,7 @@ add_shortcode( 'slider', 'slider_shortcode' );
  * Add script.
  */
 function slider_script() {
-	wp_enqueue_script( 'flexslider', SLIDER_ASSETS_URL . 'js/jquery.flexslider-min.js', array( 'jquery' ), '', TRUE );
+	wp_enqueue_script( 'flexslider', SLIDER_ASSETS_URL . 'js/jquery.flexslider-min.js', array( 'jquery' ), '', true );
 }
 
 add_action( 'wp_enqueue_scripts', 'slider_script' );
