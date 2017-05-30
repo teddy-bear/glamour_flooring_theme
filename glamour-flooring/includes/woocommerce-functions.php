@@ -145,7 +145,7 @@ function isa_woocommerce_all_pa() {
 			// Output.
 			$out .= '<span class="label">' . $tax_label . '</span>: ';
 			$out .= '<span class="attributes">';
-			$i = 0;
+			$i   = 0;
 			foreach ( $terms as $term ) {
 				$i ++;
 				if ( $i != 1 ) {
